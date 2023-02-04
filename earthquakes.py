@@ -57,3 +57,13 @@ for quakes in eq["features"]:
         eq_dict[str(x)] = cur_eq
         int(x)
         x += 1
+
+for quakes in eq_dict:
+    print(f'Location: {eq_dict[quakes]["locat"]}')
+    print(f'Magnitude: {eq_dict[quakes]["magni"]}')
+    print(f'Longitude: {eq_dict[quakes]["longi"]}')
+    print(f'Lattitude: {eq_dict[quakes]["lati"]}')
+    print()
+
+
+infile.close()
