@@ -183,6 +183,7 @@ list_of_keys = random.choice(list(phonebook))
 # random_key = random.choice(list_of_keys)
 # print(random_key)
 # print(phonebook[random_key])
+
 print(list_of_keys)
 
 print(phonebook[random.choice(list(phonebook))])
