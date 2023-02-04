@@ -26,16 +26,35 @@ schools = json.load(infile)
 
 conf_schools = [372, 108, 107, 130]
 
-#determine number of schools in list
-#print(type(schools))
+# determine number of schools in list
+# print(type(schools))
 
-#provides number of schools in a list
-#print(len(schools))
+# provides number of schools in a list
+# print(len(schools))
 
+print("-----REPORT: Universities with a graduate rate of women > 50%----")
 for school in schools:
     if school["NCAA"]["NAIA conference number football (IC2020)"] in conf_schools:
-        if school["Graduation rate women (DRVGR2020)"]>75:
-            print(f"Name of University: {school["instnm"]}")
-            #print(f"Graduation rate for women: {school["Graduation rate  women (DRVGR2020)"]})
-print()
-print()
+        if school["Graduation rate  women (DRVGR2020)"] > 50:
+            print(f'Name of University: {school["instnm"]}')
+            print(
+                f'Graduation rate for women: {school["Graduation rate  women (DRVGR2020)"]}'
+            )
+        print()
+
+print(
+    "-----REPORT: Universities total price for in-state students living off campus > $50,000----"
+)
+for school in schools:
+    if school["NCAA"]["NAIA conference number football (IC2020)"] in conf_schools:
+        if (
+            school[
+                "Total price for in-state students living off campus (not with family)  2020-21 (DRVIC2020)"
+            ]
+            > 50
+        ):
+            print(f'Name of University: {school["instnm"]}')
+            print(
+                f'Total price for in-state students: $ {school["Total price for in-state students living off campus (not with family)  2020-21 (DRVIC2020)"]}'
+            )
+        print()
