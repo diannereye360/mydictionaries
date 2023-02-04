@@ -58,3 +58,4 @@ for school in schools:
                 f'Total price for in-state students: $ {school["Total price for in-state students living off campus (not with family)  2020-21 (DRVIC2020)"]}'
             )
         print()
+infile.close()
